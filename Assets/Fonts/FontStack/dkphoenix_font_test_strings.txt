@@ -1,0 +1,33 @@
+﻿Turkish:
+Merhaba Dunya - CGIOSU cgiosu iI
+Merhaba DÃ¼nya - Ã‡ÄžÄ°Ã–ÅžÃœ Ã§ÄŸÄ±Ã¶ÅŸÃ¼ Ä±Ä°
+
+English:
+The quick brown fox jumps over the lazy dog.
+
+Korean:
+ì•ˆë…•í•˜ì„¸ìš” ë‹¤í¬ì—ë´ í…ŒìŠ¤íŠ¸
+
+Japanese:
+ã“ã‚“ã«ã¡ã¯ ãƒ€ãƒ¼ã‚¯ã‚¨ãƒ‡ãƒ³ ãƒ†ã‚¹ãƒˆ
+
+Simplified Chinese:
+ä½ å¥½ï¼Œæš—é»‘ä¼Šç”¸å›­æµ‹è¯•
+
+Traditional Chinese:
+ä½ å¥½ï¼Œé—‡é»‘ä¼Šç”¸åœ’æ¸¬è©¦
+
+Symbols:
+â˜… â˜† â–² â–¼ â—† â—‡ â†’ â† â†‘ â†“ âœ“ âœ— âš” âš¡
+
+Numbers:
+0123456789
+
+Mixed UI:
+HP 100/100 - MP 75/100 - STR +10 - Skill Lv. 5
+
+Chat:
+[Guild] PlayerName: Merhaba ì•ˆë…•í•˜ì„¸ìš” ã“ã‚“ã«ã¡ã¯ ä½ å¥½
+
+Tooltip:
+Rare Item â˜… ê³µê²©ë ¥ +15 / Savunma +20

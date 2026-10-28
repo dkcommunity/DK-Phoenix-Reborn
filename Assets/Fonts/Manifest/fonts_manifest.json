@@ -1,0 +1,203 @@
+﻿{
+    "downloadErrors":  [
+
+                       ],
+    "generatedAtUtc":  "2026-07-03T02:13:41.4830663Z",
+    "licenses":  [
+                     {
+                         "path":  "ThirdParty/Licenses/Fonts/Noto/OFL_notosans.txt",
+                         "sha256":  "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a",
+                         "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosans/OFL.txt",
+                         "status":  "ok",
+                         "sizeBytes":  4396
+                     },
+                     {
+                         "path":  "ThirdParty/Licenses/Fonts/Noto/OFL_notosanskr.txt",
+                         "sha256":  "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+                         "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanskr/OFL.txt",
+                         "status":  "ok",
+                         "sizeBytes":  4388
+                     },
+                     {
+                         "path":  "ThirdParty/Licenses/Fonts/Noto/OFL_notosansjp.txt",
+                         "sha256":  "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+                         "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansjp/OFL.txt",
+                         "status":  "ok",
+                         "sizeBytes":  4388
+                     },
+                     {
+                         "path":  "ThirdParty/Licenses/Fonts/Noto/OFL_notosanssc.txt",
+                         "sha256":  "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+                         "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/OFL.txt",
+                         "status":  "ok",
+                         "sizeBytes":  4388
+                     },
+                     {
+                         "path":  "ThirdParty/Licenses/Fonts/Noto/OFL_notosanstc.txt",
+                         "sha256":  "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+                         "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanstc/OFL.txt",
+                         "status":  "ok",
+                         "sizeBytes":  4388
+                     },
+                     {
+                         "path":  "ThirdParty/Licenses/Fonts/Noto/OFL_notosanshk.txt",
+                         "sha256":  "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+                         "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanshk/OFL.txt",
+                         "status":  "ok",
+                         "sizeBytes":  4388
+                     },
+                     {
+                         "path":  "ThirdParty/Licenses/Fonts/Noto/OFL_notosanssymbols2.txt",
+                         "sha256":  "b118dd41337806a5d4797052c77caf3bd096aed783e5eb21b4d11154351e1ac0",
+                         "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssymbols2/OFL.txt",
+                         "status":  "ok",
+                         "sizeBytes":  4383
+                     },
+                     {
+                         "path":  "ThirdParty/Licenses/Fonts/Noto/OFL_notosansmono.txt",
+                         "sha256":  "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a",
+                         "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansmono/OFL.txt",
+                         "status":  "ok",
+                         "sizeBytes":  4396
+                     }
+                 ],
+    "families":  [
+                     {
+                         "localFiles":  [
+                                            {
+                                                "path":  "Assets/Fonts/Noto/NotoSans/NotoSans[wdth,wght].ttf",
+                                                "sha256":  "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d",
+                                                "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosans/NotoSans%5Bwdth,wght%5D.ttf",
+                                                "status":  "ok",
+                                                "sizeBytes":  2049096
+                                            }
+                                        ],
+                         "displayName":  "Noto Sans",
+                         "id":  "noto_sans",
+                         "role":  "primary_ui"
+                     },
+                     {
+                         "localFiles":  [
+                                            {
+                                                "path":  "Assets/Fonts/Noto/NotoSans/NotoSans-Italic[wdth,wght].ttf",
+                                                "sha256":  "58e6e0ebd1931b29a365aa2d3e2ee9a9e831a3af7cf3ad1462d4e72154f0b291",
+                                                "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosans/NotoSans-Italic%5Bwdth,wght%5D.ttf",
+                                                "status":  "ok",
+                                                "sizeBytes":  2322640
+                                            }
+                                        ],
+                         "displayName":  "Noto Sans Italic",
+                         "id":  "noto_sans_italic",
+                         "role":  "primary_ui_italic"
+                     },
+                     {
+                         "localFiles":  [
+                                            {
+                                                "path":  "Assets/Fonts/Noto/NotoSansCJK/KR/NotoSansKR[wght].ttf",
+                                                "sha256":  "194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252",
+                                                "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanskr/NotoSansKR%5Bwght%5D.ttf",
+                                                "status":  "ok",
+                                                "sizeBytes":  10414588
+                                            }
+                                        ],
+                         "displayName":  "Noto Sans KR",
+                         "id":  "noto_sans_kr",
+                         "role":  "fallback_korean"
+                     },
+                     {
+                         "localFiles":  [
+                                            {
+                                                "path":  "Assets/Fonts/Noto/NotoSansCJK/JP/NotoSansJP[wght].ttf",
+                                                "sha256":  "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f",
+                                                "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansjp/NotoSansJP%5Bwght%5D.ttf",
+                                                "status":  "ok",
+                                                "sizeBytes":  9589900
+                                            }
+                                        ],
+                         "displayName":  "Noto Sans JP",
+                         "id":  "noto_sans_jp",
+                         "role":  "fallback_japanese"
+                     },
+                     {
+                         "localFiles":  [
+                                            {
+                                                "path":  "Assets/Fonts/Noto/NotoSansCJK/SC/NotoSansSC[wght].ttf",
+                                                "sha256":  "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+                                                "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf",
+                                                "status":  "ok",
+                                                "sizeBytes":  17772300
+                                            }
+                                        ],
+                         "displayName":  "Noto Sans SC",
+                         "id":  "noto_sans_sc",
+                         "role":  "fallback_simplified_chinese"
+                     },
+                     {
+                         "localFiles":  [
+                                            {
+                                                "path":  "Assets/Fonts/Noto/NotoSansCJK/TC/NotoSansTC[wght].ttf",
+                                                "sha256":  "864727d210d54f2537bbe23b3a839436c3992af72de9322af5270897246bd44f",
+                                                "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanstc/NotoSansTC%5Bwght%5D.ttf",
+                                                "status":  "ok",
+                                                "sizeBytes":  11941968
+                                            }
+                                        ],
+                         "displayName":  "Noto Sans TC",
+                         "id":  "noto_sans_tc",
+                         "role":  "fallback_traditional_chinese"
+                     },
+                     {
+                         "localFiles":  [
+                                            {
+                                                "path":  "Assets/Fonts/Noto/NotoSansCJK/HK/NotoSansHK[wght].ttf",
+                                                "sha256":  "76098ee78ec234cd4f8c950742b3f766fea2f8b43d5180d901048f4fc86c6849",
+                                                "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanshk/NotoSansHK%5Bwght%5D.ttf",
+                                                "status":  "ok",
+                                                "sizeBytes":  11905808
+                                            }
+                                        ],
+                         "displayName":  "Noto Sans HK",
+                         "id":  "noto_sans_hk",
+                         "role":  "fallback_hong_kong"
+                     },
+                     {
+                         "localFiles":  [
+                                            {
+                                                "path":  "Assets/Fonts/Noto/NotoSansSymbols2/NotoSansSymbols2-Regular.ttf",
+                                                "sha256":  "7d5fb73b7ca67a6798101741f5d280a3d016a56a197afcd4199dbb57b4b82a21",
+                                                "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssymbols2/NotoSansSymbols2-Regular.ttf",
+                                                "status":  "ok",
+                                                "sizeBytes":  1233128
+                                            }
+                                        ],
+                         "displayName":  "Noto Sans Symbols 2",
+                         "id":  "noto_sans_symbols2",
+                         "role":  "fallback_symbols"
+                     },
+                     {
+                         "localFiles":  [
+                                            {
+                                                "path":  "Assets/Fonts/Noto/NotoSansMono/NotoSansMono[wdth,wght].ttf",
+                                                "sha256":  "2cb2adb378a8f574213e23df697050b83c54c27df465a2015552740b2769a081",
+                                                "sourceUrl":  "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansmono/NotoSansMono%5Bwdth,wght%5D.ttf",
+                                                "status":  "ok",
+                                                "sizeBytes":  1708408
+                                            }
+                                        ],
+                         "displayName":  "Noto Sans Mono",
+                         "id":  "noto_sans_mono",
+                         "role":  "debug_monospace"
+                     },
+                     {
+                         "localFiles":  [
+
+                                        ],
+                         "displayName":  "Segoe UI Emoji",
+                         "id":  "segoe_ui_emoji",
+                         "systemFont":  true,
+                         "role":  "system_emoji"
+                     }
+                 ],
+    "schemaVersion":  1,
+    "license":  "SIL Open Font License 1.1"
+}

@@ -1,0 +1,210 @@
+﻿
+************* Preparing the environment for Debugger Extensions Gallery repositories **************
+   ExtensionRepository : Implicit
+   UseExperimentalFeatureForNugetShare : true
+   AllowNugetExeUpdate : true
+   NonInteractiveNuget : true
+   AllowNugetMSCredentialProviderInstall : true
+   AllowParallelInitializationOfLocalRepositories : true
+
+   EnableRedirectToV8JsProvider : false
+
+   -- Configuring repositories
+      ----> Repository : LocalInstalled, Enabled: true
+      ----> Repository : UserExtensions, Enabled: true
+
+>>>>>>>>>>>>> Preparing the environment for Debugger Extensions Gallery repositories completed, duration 0.000 seconds
+
+************* Waiting for Debugger Extensions Gallery to Initialize **************
+
+>>>>>>>>>>>>> Waiting for Debugger Extensions Gallery to Initialize completed, duration 0.016 seconds
+   ----> Repository : UserExtensions, Enabled: true, Packages count: 0
+   ----> Repository : LocalInstalled, Enabled: true, Packages count: 30
+
+Microsoft (R) Windows Debugger Version 10.0.26100.7705 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [C:\Users\Sh!tyOS\AppData\Local\CrashDumps\PhoenixMapEditor_Release.exe.4896.dmp]
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 26200 MP (16 procs) Free x64
+Product: WinNt, suite: SingleUserTS
+Edition build lab: 26100.1.amd64fre.ge_release.240331-1435
+Debug session time: Wed Aug 26 05:47:44.000 2026 (UTC + 3:00)
+System Uptime: 0 days 13:37:04.811
+Process Uptime: 0 days 2:50:22.000
+................................................................
+................................................................
+....................
+Loading unloaded module list
+.......................................
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(1320.6a94): Access violation - code c0000005 (first/second chance not available)
+
++------------------------------------------------------------------------+
+| This target supports Hardware-enforced Stack Protection. A HW based    |
+| "Shadow Stack" may be available to assist in debugging and analysis.   |
+| See aka.ms/userhsp for more info.                                      |
+|                                                                        |
+| dps @ssp                                                               |
+|                                                                        |
++------------------------------------------------------------------------+
+
+For analysis of this file, run !analyze -v
+ntdll!NtWaitForMultipleObjects+0x14:
+00007ffb`f4c22714 c3              ret
+0:000> .sympath E:\DK Phoenix Reborn\Tool\MapEditor\bin
+Symbol search path is: E:\DK Phoenix Reborn\Tool\MapEditor\bin
+Expanded Symbol search path is: e:\dk phoenix reborn\tool\mapeditor\bin
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+OK                                             E:\DK Phoenix Reborn\Tool\MapEditor\bin
+0:000> .reload /f PhoenixMapEditor_Release.exe
+*** WARNING: Unable to verify checksum for PhoenixMapEditor_Release.exe
+
+************* Symbol Loading Error Summary **************
+Module name            Error
+PhoenixMapEditor_Relea The system cannot find the file specified
+
+You can troubleshoot most symbol related issues by turning on symbol loading diagnostics (!sym noisy) and repeating the command that caused symbols to be loaded.
+You should also verify that your symbol search path (.sympath) is correct.
+0:000> .ecxr
+rax=0000017beb635710 rbx=0000017beb6356a8 rcx=0000000000000000
+rdx=0000000000000188 rsi=0000000000000001 rdi=0000017beb635778
+rip=00007ffbf31f694d rsp=00000067657cd370 rbp=00000067657cd3d8
+ r8=0000000000000000  r9=0000000000000000 r10=0000000000000000
+r11=00000067657cd400 r12=0000000000000000 r13=0000000000000000
+r14=00000000000103e8 r15=0000000000000000
+iopl=0         nv up ei pl nz na pe nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00010202
+user32!SendMessageW+0x34d:
+00007ffb`f31f694d 488b39          mov     rdi,qword ptr [rcx] ds:00000000`00000000=????????????????
+0:000> k 50
+Child-SP          RetAddr               Call Site
+00000067`657cd370 00007ffb`f3257bfc     user32!SendMessageW+0x34d
+00000067`657cd420 00007ffb`f3257788     user32!GetIconInfoExA+0x92c
+00000067`657cd520 00007ffb`f3237d39     user32!GetIconInfoExA+0x4b8
+00000067`657cd550 00007ffb`f32374b1     user32!SetProcessDPIAware+0x9c9
+00000067`657cd650 00007ffb`f31f7846     user32!SetProcessDPIAware+0x141
+00000067`657cd690 00007ffb`f31f730c     user32!CallWindowProcW+0x6a6
+00000067`657cd7f0 00007ffb`cfeb66b5     user32!CallWindowProcW+0x16c
+00000067`657cd860 00007ffb`cfeb68d8     comctl32!Str_SetPtrW+0x205
+00000067`657cd8f0 00007ff7`1fde0632     comctl32!DefSubclassProc+0x88
+00000067`657cd940 00007ffb`cfeb66b5     PhoenixMapEditor_Release+0x20632
+00000067`657cd970 00007ffb`cfeb6c5f     comctl32!Str_SetPtrW+0x205
+00000067`657cda00 00007ffb`f31f7846     comctl32!Ordinal411+0x19f
+00000067`657cda80 00007ffb`f31f6b53     user32!CallWindowProcW+0x6a6
+00000067`657cdbe0 00007ffb`f31f6904     user32!SendMessageW+0x553
+00000067`657cdc90 00007ffb`f31f66ef     user32!SendMessageW+0x304
+00000067`657cdce0 00007ffb`f3268ece     user32!SendMessageW+0xef
+00000067`657cdd30 00007ffb`f3268782     user32!DdeQueryStringW+0x661e
+00000067`657cddc0 00007ffb`f32808e4     user32!DdeQueryStringW+0x5ed2
+00000067`657cde30 00007ffb`f31e74df     user32!AlignRects+0x3264
+00000067`657cdf30 00007ffb`f31f7846     user32!EditWndProc+0x233f
+00000067`657cdf70 00007ffb`f31f6b53     user32!CallWindowProcW+0x6a6
+00000067`657ce0d0 00007ffb`f3238379     user32!SendMessageW+0x553
+00000067`657ce180 00007ffb`f32374b1     user32!SetProcessDPIAware+0x1009
+00000067`657ce280 00007ffb`f31f7846     user32!SetProcessDPIAware+0x141
+00000067`657ce2c0 00007ffb`f31f730c     user32!CallWindowProcW+0x6a6
+00000067`657ce420 00007ffb`cfeb66b5     user32!CallWindowProcW+0x16c
+00000067`657ce490 00007ffb`cfeb68d8     comctl32!Str_SetPtrW+0x205
+00000067`657ce520 00007ff7`1fde0632     comctl32!DefSubclassProc+0x88
+00000067`657ce570 00007ffb`cfeb66b5     PhoenixMapEditor_Release+0x20632
+00000067`657ce5a0 00007ffb`cfeb6c5f     comctl32!Str_SetPtrW+0x205
+00000067`657ce630 00007ffb`f31f7846     comctl32!Ordinal411+0x19f
+00000067`657ce6b0 00007ffb`f31f539d     user32!CallWindowProcW+0x6a6
+00000067`657ce810 00007ff7`1fde58cd     user32!IsWindowUnicode+0x3cd
+00000067`657ce890 00007ff7`1fdf4df9     PhoenixMapEditor_Release+0x258cd
+00000067`657ceb20 00007ff7`1fe2a3f6     PhoenixMapEditor_Release+0x34df9
+00000067`657cf860 00007ffb`f313e8d7     PhoenixMapEditor_Release+0x6a3f6
+00000067`657cf8a0 00007ffb`f4b4c53c     kernel32!BaseThreadInitThunk+0x17
+00000067`657cf8d0 00000000`00000000     ntdll!RtlUserThreadStart+0x2c
+0:000> ln PhoenixMapEditor_Release+0x20632
+0:000> ln PhoenixMapEditor_Release+0x258cd
+0:000> ln PhoenixMapEditor_Release+0x34df9
+0:000> ub PhoenixMapEditor_Release+0x20632 L20
+PhoenixMapEditor_Release+0x205ca:
+00007ff7`1fde05ca fa              cli
+00007ff7`1fde05cb 0001            add     byte ptr [rcx],al
+00007ff7`1fde05cd 0000            add     byte ptr [rax],al
+00007ff7`1fde05cf 7526            jne     PhoenixMapEditor_Release+0x205f7 (00007ff7`1fde05f7)
+00007ff7`1fde05d1 4983f80d        cmp     r8,0Dh
+00007ff7`1fde05d5 7437            je      PhoenixMapEditor_Release+0x2060e (00007ff7`1fde060e)
+00007ff7`1fde05d7 4983f81b        cmp     r8,1Bh
+00007ff7`1fde05db 754b            jne     PhoenixMapEditor_Release+0x20628 (00007ff7`1fde0628)
+00007ff7`1fde05dd 488bcb          mov     rcx,rbx
+00007ff7`1fde05e0 e83b1effff      call    PhoenixMapEditor_Release+0x12420 (00007ff7`1fdd2420)
+00007ff7`1fde05e5 33c0            xor     eax,eax
+00007ff7`1fde05e7 488b5c2438      mov     rbx,qword ptr [rsp+38h]
+00007ff7`1fde05ec 488b6c2440      mov     rbp,qword ptr [rsp+40h]
+00007ff7`1fde05f1 4883c420        add     rsp,20h
+00007ff7`1fde05f5 5f              pop     rdi
+00007ff7`1fde05f6 c3              ret
+00007ff7`1fde05f7 83ff08          cmp     edi,8
+00007ff7`1fde05fa 752c            jne     PhoenixMapEditor_Release+0x20628 (00007ff7`1fde0628)
+00007ff7`1fde05fc 80bbdc0b000000  cmp     byte ptr [rbx+0BDCh],0
+00007ff7`1fde0603 7523            jne     PhoenixMapEditor_Release+0x20628 (00007ff7`1fde0628)
+00007ff7`1fde0605 4c3b8348010000  cmp     r8,qword ptr [rbx+148h]
+00007ff7`1fde060c 741a            je      PhoenixMapEditor_Release+0x20628 (00007ff7`1fde0628)
+00007ff7`1fde060e 488bcb          mov     rcx,rbx
+00007ff7`1fde0611 e87a1fffff      call    PhoenixMapEditor_Release+0x12590 (00007ff7`1fdd2590)
+00007ff7`1fde0616 33c0            xor     eax,eax
+00007ff7`1fde0618 488b5c2438      mov     rbx,qword ptr [rsp+38h]
+00007ff7`1fde061d 488b6c2440      mov     rbp,qword ptr [rsp+40h]
+00007ff7`1fde0622 4883c420        add     rsp,20h
+00007ff7`1fde0626 5f              pop     rdi
+00007ff7`1fde0627 c3              ret
+00007ff7`1fde0628 4889742430      mov     qword ptr [rsp+30h],rsi
+00007ff7`1fde062d e8646c0200      call    PhoenixMapEditor_Release+0x47296 (00007ff7`1fe07296)
+0:000> ub PhoenixMapEditor_Release+0x258cd L20
+PhoenixMapEditor_Release+0x25858:
+00007ff7`1fde5858 0f1145e0        movups  xmmword ptr [rbp-20h],xmm0
+00007ff7`1fde585c 4533c9          xor     r9d,r9d
+00007ff7`1fde585f 4533c0          xor     r8d,r8d
+00007ff7`1fde5862 33d2            xor     edx,edx
+00007ff7`1fde5864 488d4dc0        lea     rcx,[rbp-40h]
+00007ff7`1fde5868 ff15e23d0700    call    qword ptr [PhoenixMapEditor_Release+0x99650 (00007ff7`1fe59650)]
+00007ff7`1fde586e 85c0            test    eax,eax
+00007ff7`1fde5870 7e71            jle     PhoenixMapEditor_Release+0x258e3 (00007ff7`1fde58e3)
+00007ff7`1fde5872 ff15603d0700    call    qword ptr [PhoenixMapEditor_Release+0x995d8 (00007ff7`1fe595d8)]
+00007ff7`1fde5878 488b8b40010000  mov     rcx,qword ptr [rbx+140h]
+00007ff7`1fde587f 483bc1          cmp     rax,rcx
+00007ff7`1fde5882 7435            je      PhoenixMapEditor_Release+0x258b9 (00007ff7`1fde58b9)
+00007ff7`1fde5884 483b8318010000  cmp     rax,qword ptr [rbx+118h]
+00007ff7`1fde588b 742c            je      PhoenixMapEditor_Release+0x258b9 (00007ff7`1fde58b9)
+00007ff7`1fde588d 4885c9          test    rcx,rcx
+00007ff7`1fde5890 740d            je      PhoenixMapEditor_Release+0x2589f (00007ff7`1fde589f)
+00007ff7`1fde5892 488bd0          mov     rdx,rax
+00007ff7`1fde5895 ff156d3d0700    call    qword ptr [PhoenixMapEditor_Release+0x99608 (00007ff7`1fe59608)]
+00007ff7`1fde589b 85c0            test    eax,eax
+00007ff7`1fde589d 751a            jne     PhoenixMapEditor_Release+0x258b9 (00007ff7`1fde58b9)
+00007ff7`1fde589f 4885ff          test    rdi,rdi
+00007ff7`1fde58a2 7415            je      PhoenixMapEditor_Release+0x258b9 (00007ff7`1fde58b9)
+00007ff7`1fde58a4 4c8d45c0        lea     r8,[rbp-40h]
+00007ff7`1fde58a8 488bd7          mov     rdx,rdi
+00007ff7`1fde58ab 488b4b08        mov     rcx,qword ptr [rbx+8]
+00007ff7`1fde58af ff15d33c0700    call    qword ptr [PhoenixMapEditor_Release+0x99588 (00007ff7`1fe59588)]
+00007ff7`1fde58b5 85c0            test    eax,eax
+00007ff7`1fde58b7 7514            jne     PhoenixMapEditor_Release+0x258cd (00007ff7`1fde58cd)
+00007ff7`1fde58b9 488d4dc0        lea     rcx,[rbp-40h]
+00007ff7`1fde58bd ff15853d0700    call    qword ptr [PhoenixMapEditor_Release+0x99648 (00007ff7`1fe59648)]
+00007ff7`1fde58c3 488d4dc0        lea     rcx,[rbp-40h]
+00007ff7`1fde58c7 ff15733d0700    call    qword ptr [PhoenixMapEditor_Release+0x99640 (00007ff7`1fe59640)]
+0:000> q
+quit:
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\atlmfc.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\ObjectiveC.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\concurrency.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\cpp_rest.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\stl.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Data.Json.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Geolocation.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Sensors.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Media.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\windows.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\winrt.natvis'

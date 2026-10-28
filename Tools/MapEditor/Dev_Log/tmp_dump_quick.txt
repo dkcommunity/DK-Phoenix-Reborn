@@ -1,0 +1,185 @@
+﻿
+************* Preparing the environment for Debugger Extensions Gallery repositories **************
+   ExtensionRepository : Implicit
+   UseExperimentalFeatureForNugetShare : true
+   AllowNugetExeUpdate : true
+   NonInteractiveNuget : true
+   AllowNugetMSCredentialProviderInstall : true
+   AllowParallelInitializationOfLocalRepositories : true
+
+   EnableRedirectToV8JsProvider : false
+
+   -- Configuring repositories
+      ----> Repository : LocalInstalled, Enabled: true
+      ----> Repository : UserExtensions, Enabled: true
+
+>>>>>>>>>>>>> Preparing the environment for Debugger Extensions Gallery repositories completed, duration 0.000 seconds
+
+************* Waiting for Debugger Extensions Gallery to Initialize **************
+
+>>>>>>>>>>>>> Waiting for Debugger Extensions Gallery to Initialize completed, duration 0.000 seconds
+   ----> Repository : UserExtensions, Enabled: true, Packages count: 0
+   ----> Repository : LocalInstalled, Enabled: true, Packages count: 30
+
+Microsoft (R) Windows Debugger Version 10.0.26100.7705 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [C:\Users\Sh!tyOS\AppData\Local\CrashDumps\PhoenixMapEditor_Release.exe.4896.dmp]
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 26200 MP (16 procs) Free x64
+Product: WinNt, suite: SingleUserTS
+Edition build lab: 26100.1.amd64fre.ge_release.240331-1435
+Debug session time: Wed Aug 26 05:47:44.000 2026 (UTC + 3:00)
+System Uptime: 0 days 13:37:04.811
+Process Uptime: 0 days 2:50:22.000
+................................................................
+................................................................
+....................
+Loading unloaded module list
+.......................................
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(1320.6a94): Access violation - code c0000005 (first/second chance not available)
+
++------------------------------------------------------------------------+
+| This target supports Hardware-enforced Stack Protection. A HW based    |
+| "Shadow Stack" may be available to assist in debugging and analysis.   |
+| See aka.ms/userhsp for more info.                                      |
+|                                                                        |
+| dps @ssp                                                               |
+|                                                                        |
++------------------------------------------------------------------------+
+
+For analysis of this file, run !analyze -v
+ntdll!NtWaitForMultipleObjects+0x14:
+00007ffb`f4c22714 c3              ret
+0:000> cdb: Reading initial command '.echo ===EXR===; .exr -1; .echo ===STACK===; k 30; .echo ===MODULES===; lmt; q'
+===EXR===
+ExceptionAddress: 00007ffbf31f694d (user32!SendMessageWorker+0x000000000000001d)
+   ExceptionCode: c0000005 (Access violation)
+  ExceptionFlags: 00000000
+NumberParameters: 2
+   Parameter[0]: 0000000000000000
+   Parameter[1]: 0000000000000000
+Attempt to read from address 0000000000000000
+===STACK===
+Child-SP          RetAddr               Call Site
+00000067`657cbe28 00007ffb`f1fbdf83     ntdll!NtWaitForMultipleObjects+0x14
+00000067`657cbe30 00007ffb`f1fbde51     KERNELBASE!WaitForMultipleObjectsEx+0x123
+00000067`657cc120 00007ffb`f31612f0     KERNELBASE!WaitForMultipleObjects+0x11
+00000067`657cc160 00007ffb`f31887ed     kernel32!WerpReportFaultInternal+0x62c
+00000067`657cc2e0 00007ffb`f2095c1c     kernel32!WerpReportFault+0xc5
+00000067`657cc330 00007ffb`f4c2a5e3     KERNELBASE!UnhandledExceptionFilter+0x34c
+00000067`657cc420 00007ffb`f4be18a3     ntdll!RtlUserThreadStart$filt$0+0x3f
+00000067`657cc450 00007ffb`f4c262ff     ntdll!_C_specific_handler+0x93
+00000067`657cc4c0 00007ffb`f4ad2327     ntdll!RtlpExecuteHandlerForException+0xf
+00000067`657cc4f0 00007ffb`f4c25c3e     ntdll!RtlDispatchException+0x437
+00000067`657ccc40 00007ffb`f31f694d     ntdll!KiUserExceptionDispatch+0x2e
+00000067`657cd370 00007ffb`f3257bfc     user32!SendMessageWorker+0x1d
+00000067`657cd420 00007ffb`f3257788     user32!xxxCBInternalUpdateEditWindow+0x84
+00000067`657cd520 00007ffb`f3237d39     user32!xxxCBCommandHandler+0xe8
+00000067`657cd550 00007ffb`f32374b1     user32!ComboBoxWndProcWorker+0x839
+00000067`657cd650 00007ffb`f31f7846     user32!ComboBoxWndProcW+0x61
+00000067`657cd690 00007ffb`f31f730c     user32!UserCallWinProcCheckWow+0x356
+00000067`657cd7f0 00007ffb`cfeb66b5     user32!CallWindowProcW+0x16c
+00000067`657cd860 00007ffb`cfeb68d8     comctl32!CallNextSubclassProc+0xad
+*** WARNING: Unable to verify checksum for PhoenixMapEditor_Release.exe
+00000067`657cd8f0 00007ff7`1fde0632     comctl32!DefSubclassProc+0x88
+00000067`657cd940 00007ffb`cfeb66b5     PhoenixMapEditor_Release+0x20632
+00000067`657cd970 00007ffb`cfeb6c5f     comctl32!CallNextSubclassProc+0xad
+00000067`657cda00 00007ffb`f31f7846     comctl32!MasterSubclassProc+0xef
+00000067`657cda80 00007ffb`f31f6b53     user32!UserCallWinProcCheckWow+0x356
+00000067`657cdbe0 00007ffb`f31f6904     user32!SendMessageWorker+0x223
+00000067`657cdc90 00007ffb`f31f66ef     user32!SendMessageInternal+0x174
+00000067`657cdce0 00007ffb`f3268ece     user32!SendMessageW+0xef
+00000067`657cdd30 00007ffb`f3268782     user32!xxxLBoxCtlKeyInput+0x736
+00000067`657cddc0 00007ffb`f32808e4     user32!xxxLBoxCtlCharInput+0x302
+00000067`657cde30 00007ffb`f31e74df     user32!ListBoxWndProcWorker+0x99344
+00000067`657cdf30 00007ffb`f31f7846     user32!ComboListBoxWndProcW+0x5f
+00000067`657cdf70 00007ffb`f31f6b53     user32!UserCallWinProcCheckWow+0x356
+00000067`657ce0d0 00007ffb`f3238379     user32!SendMessageWorker+0x223
+00000067`657ce180 00007ffb`f32374b1     user32!ComboBoxWndProcWorker+0xe79
+00000067`657ce280 00007ffb`f31f7846     user32!ComboBoxWndProcW+0x61
+00000067`657ce2c0 00007ffb`f31f730c     user32!UserCallWinProcCheckWow+0x356
+00000067`657ce420 00007ffb`cfeb66b5     user32!CallWindowProcW+0x16c
+00000067`657ce490 00007ffb`cfeb68d8     comctl32!CallNextSubclassProc+0xad
+00000067`657ce520 00007ff7`1fde0632     comctl32!DefSubclassProc+0x88
+00000067`657ce570 00007ffb`cfeb66b5     PhoenixMapEditor_Release+0x20632
+00000067`657ce5a0 00007ffb`cfeb6c5f     comctl32!CallNextSubclassProc+0xad
+00000067`657ce630 00007ffb`f31f7846     comctl32!MasterSubclassProc+0xef
+00000067`657ce6b0 00007ffb`f31f539d     user32!UserCallWinProcCheckWow+0x356
+00000067`657ce810 00007ff7`1fde58cd     user32!DispatchMessageWorker+0x1dd
+00000067`657ce890 00007ff7`1fdf4df9     PhoenixMapEditor_Release+0x258cd
+00000067`657ceb20 00007ff7`1fe2a3f6     PhoenixMapEditor_Release+0x34df9
+00000067`657cf860 00007ffb`f313e8d7     PhoenixMapEditor_Release+0x6a3f6
+00000067`657cf8a0 00007ffb`f4b4c53c     kernel32!BaseThreadInitThunk+0x17
+===MODULES===
+start             end                 module name
+00007ff7`1fdc0000 00007ff7`1fe96000   PhoenixMapEditor_Release  Wed Aug 26 02:57:11 2026 (6A8E2BD7)
+00007ffb`19900000 00007ffb`199a0000   tiptsf    5D7FF887 (This is a reproducible build file hash, not a timestamp)
+00007ffb`1b230000 00007ffb`1b3dc000   dui70     8C9EE27D (This is a reproducible build file hash, not a timestamp)
+00007ffb`7ed70000 00007ffb`7ee14000   wpdshext  A4327C97 (This is a reproducible build file hash, not a timestamp)
+00007ffb`7fb30000 00007ffb`7fb51000   davclnt   C0B4C615 (This is a reproducible build file hash, not a timestamp)
+00007ffb`81570000 00007ffb`81613000   duser     B1824A29 (This is a reproducible build file hash, not a timestamp)
+00007ffb`835f0000 00007ffb`83754000   nvspcap64  Mon Jun 15 18:24:30 2026 (6A30192E)
+00007ffb`83760000 00007ffb`83e87000   nvppex    Thu Jun 11 22:20:58 2026 (6A2B0A9A)
+00007ffb`87590000 00007ffb`875e1000   dlnashext  ADA6B338 (This is a reproducible build file hash, not a timestamp)
+00007ffb`87970000 00007ffb`87995000   ntlanman  C1B7B409 (This is a reproducible build file hash, not a timestamp)
+00007ffb`895f0000 00007ffb`8961f000   DevDispItemProvider  6FACFDF5 (This is a reproducible build file hash, not a timestamp)
+00007ffb`9f5e0000 00007ffb`9f69c000   Windows_FileExplorer_Common  09ECCA12 (This is a reproducible build file hash, not a timestamp)
+00007ffb`a1fd0000 00007ffb`a1fdd000   atlthunk  59EAC02D (This is a reproducible build file hash, not a timestamp)
+00007ffb`a6270000 00007ffb`a633c000   cscui     022170A0 (This is a reproducible build file hash, not a timestamp)
+00007ffb`a6340000 00007ffb`a6378000   EhStorShell  76E8D19F (This is a reproducible build file hash, not a timestamp)
+00007ffb`a6380000 00007ffb`a6442000   CoreSync_x64  Fri Nov 28 21:06:10 2025 (6929E492)
+00007ffb`b4a10000 00007ffb`b4a32000   p9np      70CC6159 (This is a reproducible build file hash, not a timestamp)
+00007ffb`b6fc0000 00007ffb`b6fc9000   IDMShellExt64  Tue Mar  2 19:10:41 2021 (603E6381)
+00007ffb`b7ef0000 00007ffb`b7eff000   linkinfo  92911A77 (This is a reproducible build file hash, not a timestamp)
+00007ffb`b7f80000 00007ffb`b8001000   actxprxy  37CCC9F6 (This is a reproducible build file hash, not a timestamp)
+00007ffb`b8c00000 00007ffb`b8ca7000   ntshrui   BF375AC7 (This is a reproducible build file hash, not a timestamp)
+00007ffb`b9980000 00007ffb`b99ac000   WcnApi    75F7DB03 (This is a reproducible build file hash, not a timestamp)
+00007ffb`b99b0000 00007ffb`b99d1000   fdWCN     CFB221D1 (This is a reproducible build file hash, not a timestamp)
+00007ffb`bb000000 00007ffb`bb2bd000   explorerframe  59B5BDF9 (This is a reproducible build file hash, not a timestamp)
+00007ffb`bc670000 00007ffb`bc7ea000   Windows_System_Launcher  82FA7BCE (This is a reproducible build file hash, not a timestamp)
+00007ffb`be430000 00007ffb`be49f000   thumbcache  D673BB74 (This is a reproducible build file hash, not a timestamp)
+00007ffb`bebc0000 00007ffb`becf4000   Windows_Storage_Search  BD949CA4 (This is a reproducible build file hash, not a timestamp)
+00007ffb`bed00000 00007ffb`bedbd000   StructuredQuery  44EEB979 (This is a reproducible build file hash, not a timestamp)
+00007ffb`bedc0000 00007ffb`bee95000   twinapi   B2409FCF (This is a reproducible build file hash, not a timestamp)
+00007ffb`bfea0000 00007ffb`bfefc000   PlayToDevice  686DBB77 (This is a reproducible build file hash, not a timestamp)
+00007ffb`bff20000 00007ffb`bff54000   fundisc   10663E00 (This is a reproducible build file hash, not a timestamp)
+00007ffb`c0510000 00007ffb`c0535000   EhStorAPI  DF5D14E4 (This is a reproducible build file hash, not a timestamp)
+00007ffb`c0940000 00007ffb`c0957000   dfscli    F20CEBD2 (This is a reproducible build file hash, not a timestamp)
+00007ffb`c0d40000 00007ffb`c0d54000   fdProxy   CCDBABB5 (This is a reproducible build file hash, not a timestamp)
+00007ffb`c1430000 00007ffb`c1446000   dtsh      C4E8806C (This is a reproducible build file hash, not a timestamp)
+00007ffb`c1480000 00007ffb`c1496000   threadpoolwinrt  8910843E (This is a reproducible build file hash, not a timestamp)
+00007ffb`c2150000 00007ffb`c21aa000   dataexchange  CF757D7F (This is a reproducible build file hash, not a timestamp)
+00007ffb`c2670000 00007ffb`c2686000   browcli   5B91C671 (This is a reproducible build file hash, not a timestamp)
+00007ffb`c2b60000 00007ffb`c2b76000   NetworkItemFactory  4A9517F4 (This is a reproducible build file hash, not a timestamp)
+00007ffb`c2f10000 00007ffb`c3332000   UIAutomationCore  7CD7E357 (This is a reproducible build file hash, not a timestamp)
+00007ffb`c5140000 00007ffb`c515e000   atl       B0FC1BB2 (This is a reproducible build file hash, not a timestamp)
+00007ffb`c7670000 00007ffb`c7739000   OneCoreCommonProxyStub  E8A01E3D (This is a reproducible build file hash, not a timestamp)
+00007ffb`c7b30000 00007ffb`c7b63000   globinputhost  963D4DB8 (This is a reproducible build file hash, not a timestamp)
+00007ffb`c7d40000 00007ffb`c7e88000   textinputframework  237C5384 (This is a reproducible build file hash, not a timestamp)
+00007ffb`c85d0000 00007ffb`c8683000   TextShaping  3A84D65E (This is a reproducible build file hash, not a timestamp)
+00007ffb`c87d0000 00007ffb`c895f000   Windows_Globalization  FF0BB79B (This is a reproducible build file hash, not a timestamp)
+00007ffb`c8970000 00007ffb`c8ac0000   Windows_UI_Immersive  630914EE (This is a reproducible build file hash, not a timestamp)
+00007ffb`c9f10000 00007ffb`ca062000   Windows_UI  956C867B (This is a reproducible build file hash, not a timestamp)
+00007ffb`cd850000 00007ffb`cd85d000   fdWNet    364BBEB2 (This is a reproducible build file hash, not a timestamp)
+00007ffb`cf240000 00007ffb`cf29e000   Bcp47Langs  4AC9E901 (This is a reproducible build file hash, not a timestamp)
+00007ffb`cf5c0000 00007ffb`cf639000   oleacc    44CBC155 (This is a reproducible build file hash, not a timestamp)
+00007ffb`cfaf0000 00007ffb`cfb03000   cscapi    A0BEEB39 (This is a reproducible build file hash, not a timestamp)
+00007ffb`cfe70000 00007ffb`cfe8b000   NetworkExplorer  5533A927 (This is a reproducible build file hash, not a timestamp)
+00007ffb`cfe90000 00007ffb`cff44000   comctl32  29387C8E (This is a reproducible build file hash, not a timestamp)
+00007ffb`d0070000 00007ffb`d0099000   edputil   36CC0647 (This is a reproducible build file hash, not a timestamp)
+00007ffb`d0db0000 00007ffb`d0f89000   GdiPlus   56E30C1B (This is a reproducible build file hash, not a timestamp)
+00007ffb`d27a0000 00007ffb`d2a33000   comctl32_7ffbd27a0000  C3606F19 (This is a reproducible build file hash, not a timestamp)
+00007ffb`d61c0000 00007ffb`d61e9000   srvcli    0E4CEB6F (This is a reproducible build file hash, not a timestamp)
+00007ffb`d61f0000 00007ffb`d64b5000   iertutil  87A0B85D (This is a reproducible build file hash, not a timestamp)
+00007ffb`d6930000 00007ffb`d6b10000   urlmon    6A3F50A6 (This is a reproducible build file hash, not a timestamp)
+00007ffb`d6b20000 00007ffb`d6b41000   mpr       91065FCC (This is a reproducible build file hash, not a timestamp)
+00007ffb`d70e0000 00007ffb`d7709000   windowsudk_shellcommon  CC99A59C (This is a reproducible build file hash, not a timestamp)
+00007ffb`d78d0000 00007ffb`d7b6e000   icu       98CBA8B0 (This is a reproducible build file hash, not a timestamp)
+00007ffb`d89c0000 00007ffb`ddf65000   nvwgf2umx  Thu Jun 11 22:35:43 2026 (6A2B0E0F)

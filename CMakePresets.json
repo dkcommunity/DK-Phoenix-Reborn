@@ -1,0 +1,35 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 24,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "windows-vs2022-x64",
+      "displayName": "Windows VS2022 x64",
+      "description": "Visual Studio 2022 generator for the x64-only modern client.",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/Build/windows-vs2022-x64",
+      "cacheVariables": {
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/Build/install"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-vs2022-x64-debug",
+      "displayName": "Windows VS2022 x64 Debug",
+      "configurePreset": "windows-vs2022-x64",
+      "configuration": "Debug"
+    },
+    {
+      "name": "windows-vs2022-x64-release",
+      "displayName": "Windows VS2022 x64 Release",
+      "configurePreset": "windows-vs2022-x64",
+      "configuration": "Release"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+﻿{
+    "debug":  {
+                  "regular":  "Noto Sans Mono"
+              },
+    "chat":  {
+                 "regular":  "Noto Sans",
+                 "fallback":  [
+                                  "Noto Sans KR",
+                                  "Noto Sans JP",
+                                  "Noto Sans SC",
+                                  "Noto Sans TC",
+                                  "Noto Sans Symbols 2",
+                                  "Segoe UI Emoji"
+                              ]
+             },
+    "defaultFontStack":  [
+                             "Noto Sans",
+                             "Noto Sans KR",
+                             "Noto Sans JP",
+                             "Noto Sans SC",
+                             "Noto Sans TC",
+                             "Noto Sans HK",
+                             "Noto Sans Symbols 2",
+                             "Segoe UI Emoji"
+                         ],
+    "schemaVersion":  1,
+    "emoji":  {
+                  "systemFallback":  "Segoe UI Emoji"
+              },
+    "ui":  {
+               "bold":  "Noto Sans",
+               "regular":  "Noto Sans",
+               "medium":  "Noto Sans",
+               "semibold":  "Noto Sans"
+           }
+}

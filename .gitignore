@@ -1,0 +1,67 @@
+# Build outputs
+GameData/
+Build/
+.vs/
+*.suo
+*.user
+*.aps
+*.pdb
+*.obj
+*.lib
+*.exe
+*.dll
+*.exp
+*.ilk
+*.ipdb
+*.iobj
+
+# Python cache and local environments
+__pycache__/
+*.pyc
+**/.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# CMake build
+_deps/
+CMakeFiles/
+cmake_install.cmake
+CMakeCache.txt
+**/build/**
+
+# Logs and scratch
+*.log
+logs/
+Logs/
+Docs/
+TempVerify/
+scratch/
+dump/
+temp/
+*.tmp
+*.bak
+
+# Additional requested exclusions
+Tools/SpriteUILayoutTool/
+
+# Misc
+Thumbs.db
+.DS_Store
+*.cache
+*.class
+*.o
+*.d
+*_deps/
+
+# Intermediate files created during agent work
+# Windows reserved names
+nul
+
+# Build outputs
+Backups/hermes-ui-catalog-parity/
+TempValidationScripts/

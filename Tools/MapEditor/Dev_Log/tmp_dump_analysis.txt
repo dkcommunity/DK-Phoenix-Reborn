@@ -1,0 +1,509 @@
+﻿
+************* Preparing the environment for Debugger Extensions Gallery repositories **************
+   ExtensionRepository : Implicit
+   UseExperimentalFeatureForNugetShare : true
+   AllowNugetExeUpdate : true
+   NonInteractiveNuget : true
+   AllowNugetMSCredentialProviderInstall : true
+   AllowParallelInitializationOfLocalRepositories : true
+
+   EnableRedirectToV8JsProvider : false
+
+   -- Configuring repositories
+      ----> Repository : LocalInstalled, Enabled: true
+      ----> Repository : UserExtensions, Enabled: true
+
+>>>>>>>>>>>>> Preparing the environment for Debugger Extensions Gallery repositories completed, duration 0.000 seconds
+
+************* Waiting for Debugger Extensions Gallery to Initialize **************
+
+>>>>>>>>>>>>> Waiting for Debugger Extensions Gallery to Initialize completed, duration 0.219 seconds
+   ----> Repository : UserExtensions, Enabled: true, Packages count: 0
+   ----> Repository : LocalInstalled, Enabled: true, Packages count: 30
+
+Microsoft (R) Windows Debugger Version 10.0.26100.7705 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [C:\Users\Sh!tyOS\AppData\Local\CrashDumps\PhoenixMapEditor_Release.exe.4896.dmp]
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 26200 MP (16 procs) Free x64
+Product: WinNt, suite: SingleUserTS
+Edition build lab: 26100.1.amd64fre.ge_release.240331-1435
+Debug session time: Wed Aug 26 05:47:44.000 2026 (UTC + 3:00)
+System Uptime: 0 days 13:37:04.811
+Process Uptime: 0 days 2:50:22.000
+................................................................
+................................................................
+....................
+Loading unloaded module list
+.......................................
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(1320.6a94): Access violation - code c0000005 (first/second chance not available)
+
++------------------------------------------------------------------------+
+| This target supports Hardware-enforced Stack Protection. A HW based    |
+| "Shadow Stack" may be available to assist in debugging and analysis.   |
+| See aka.ms/userhsp for more info.                                      |
+|                                                                        |
+| dps @ssp                                                               |
+|                                                                        |
++------------------------------------------------------------------------+
+
+For analysis of this file, run !analyze -v
+ntdll!NtWaitForMultipleObjects+0x14:
+00007ffb`f4c22714 c3              ret
+0:000> cdb: Reading initial command '.sympath srv*C:\Symbols*https://msdl.microsoft.com/download/symbols;E:\DK Phoenix Reborn\Tool\MapEditor\bin;E:\DK Phoenix Reborn\Tool\MapEditor\build\windows-vs2022-x64\lib\Release;E:\DK Phoenix Reborn\Tool\MapEditor\build\windows-vs2022-x64\lib\Debug
+.reload
+!analyze -v
+.ecxr
+k 40
+lm
+q'
+Symbol search path is: srv*C:\Symbols*https://msdl.microsoft.com/download/symbols;E:\DK Phoenix Reborn\Tool\MapEditor\bin;E:\DK Phoenix Reborn\Tool\MapEditor\build\windows-vs2022-x64\lib\Release;E:\DK Phoenix Reborn\Tool\MapEditor\build\windows-vs2022-x64\lib\Debug .reload !analyze -v .ecxr k 40 lm q
+Expanded Symbol search path is: srv*c:\symbols*https://msdl.microsoft.com/download/symbols;e:\dk phoenix reborn\tool\mapeditor\bin;e:\dk phoenix reborn\tool\mapeditor\build\windows-vs2022-x64\lib\release;e:\dk phoenix reborn\tool\mapeditor\build\windows-vs2022-x64\lib\debug .reload !analyze -v .ecxr k 40 lm q
+Error: Execute .sympath(+) command attempts to access 'E:\DK Phoenix Reborn\Tool\MapEditor\build\windows-vs2022-x64\lib\Debug .reload !analyze -v .ecxr k 40 lm q' failed: 0x2 - The system cannot find the file specified.
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*C:\Symbols*https://msdl.microsoft.com/download/symbols
+OK                                             E:\DK Phoenix Reborn\Tool\MapEditor\bin
+OK                                             E:\DK Phoenix Reborn\Tool\MapEditor\build\windows-vs2022-x64\lib\Release
+Error                                          E:\DK Phoenix Reborn\Tool\MapEditor\build\windows-vs2022-x64\lib\Debug .reload !analyze -v .ecxr k 40 lm q
+0:000> Symbol search path is: srv*C:\Symbols*https://msdl.microsoft.com/download/symbols;E:\DK Phoenix Reborn\Tool\MapEditor\bin;E:\DK Phoenix Reborn\Tool\MapEditor\build\windows-vs2022-x64\lib\Release;E:\DK Phoenix Reborn\Tool\MapEditor\build\windows-vs2022-x64\lib\Debug
+Expanded Symbol search path is: srv*c:\symbols*https://msdl.microsoft.com/download/symbols;e:\dk phoenix reborn\tool\mapeditor\bin;e:\dk phoenix reborn\tool\mapeditor\build\windows-vs2022-x64\lib\release;e:\dk phoenix reborn\tool\mapeditor\build\windows-vs2022-x64\lib\debug
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*C:\Symbols*https://msdl.microsoft.com/download/symbols
+OK                                             E:\DK Phoenix Reborn\Tool\MapEditor\bin
+OK                                             E:\DK Phoenix Reborn\Tool\MapEditor\build\windows-vs2022-x64\lib\Release
+OK                                             E:\DK Phoenix Reborn\Tool\MapEditor\build\windows-vs2022-x64\lib\Debug
+0:000> ..
+
+Press ctrl-c (cdb, kd, ntsd) or ctrl-break (windbg) to abort symbol loads that take too long.
+Run !sym noisy before .reload to track down problems loading symbols.
+
+..............................................................
+................................................................
+....................
+Loading unloaded module list
+.......................................
+0:000> *******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+*** WARNING: Unable to verify checksum for PhoenixMapEditor_Release.exe
+
+KEY_VALUES_STRING: 1
+
+    Key  : AV.Dereference
+    Value: NullPtr
+
+    Key  : AV.Fault
+    Value: Read
+
+    Key  : Analysis.CPU.mSec
+    Value: 921
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 98760
+
+    Key  : Analysis.IO.Other.Mb
+    Value: 31
+
+    Key  : Analysis.IO.Read.Mb
+    Value: 0
+
+    Key  : Analysis.IO.Write.Mb
+    Value: 61
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 375
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 65613
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 129
+
+    Key  : Failure.Bucket
+    Value: NULL_POINTER_READ_c0000005_PhoenixMapEditor_Release.exe!Unknown
+
+    Key  : Failure.Hash
+    Value: {bf4d2730-c355-7c61-7979-88f5200b3532}
+
+    Key  : Timeline.OS.Boot.DeltaSec
+    Value: 49024
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 10222
+
+    Key  : WER.OS.Branch
+    Value: ge_release
+
+    Key  : WER.OS.Version
+    Value: 10.0.26100.1
+
+
+FILE_IN_CAB:  PhoenixMapEditor_Release.exe.4896.dmp
+
+NTGLOBALFLAG:  0
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+CONTEXT:  (.ecxr)
+rax=0000017beb635710 rbx=0000017beb6356a8 rcx=0000000000000000
+rdx=0000000000000188 rsi=0000000000000001 rdi=0000017beb635778
+rip=00007ffbf31f694d rsp=00000067657cd370 rbp=00000067657cd3d8
+ r8=0000000000000000  r9=0000000000000000 r10=0000000000000000
+r11=00000067657cd400 r12=0000000000000000 r13=0000000000000000
+r14=00000000000103e8 r15=0000000000000000
+iopl=0         nv up ei pl nz na pe nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00010202
+user32!SendMessageWorker+0x1d:
+00007ffb`f31f694d 488b39          mov     rdi,qword ptr [rcx] ds:00000000`00000000=????????????????
+Resetting default scope
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 00007ffbf31f694d (user32!SendMessageWorker+0x000000000000001d)
+   ExceptionCode: c0000005 (Access violation)
+  ExceptionFlags: 00000000
+NumberParameters: 2
+   Parameter[0]: 0000000000000000
+   Parameter[1]: 0000000000000000
+Attempt to read from address 0000000000000000
+
+PROCESS_NAME:  PhoenixMapEditor_Release.exe
+
+READ_ADDRESS:  0000000000000000 
+
+ERROR_CODE: (NTSTATUS) 0xc0000005 - The instruction at 0x%p referenced memory at 0x%p. The memory could not be %s.
+
+EXCEPTION_CODE_STR:  c0000005
+
+EXCEPTION_PARAMETER1:  0000000000000000
+
+EXCEPTION_PARAMETER2:  0000000000000000
+
+STACK_TEXT:  
+00000067`657cd370 00007ffb`f3257bfc     : 0000017b`9f2e1600 00007ffb`f31f6b53 00000000`00000000 00000000`00000000 : user32!SendMessageWorker+0x1d
+00000067`657cd420 00007ffb`f3257788     : 0000017b`eb635778 00000067`657cd5f1 0000017b`eb635778 00000000`00000001 : user32!xxxCBInternalUpdateEditWindow+0x84
+00000067`657cd520 00007ffb`f3237d39     : 00000000`00000111 00000000`00000000 00007ffb`f1c16f50 00000000`00000001 : user32!xxxCBCommandHandler+0xe8
+00000067`657cd550 00007ffb`f32374b1     : 0000017b`9ee50f00 00000000`000103e8 00000000`002216fe 00000000`80000022 : user32!ComboBoxWndProcWorker+0x839
+00000067`657cd650 00007ffb`f31f7846     : 00000000`00000000 00000000`00000001 00000000`00000001 00000000`00000000 : user32!ComboBoxWndProcW+0x61
+00000067`657cd690 00007ffb`f31f730c     : 0000017b`9f325d50 00007ffb`f4c21900 00000000`00221878 00000000`00221878 : user32!UserCallWinProcCheckWow+0x356
+00000067`657cd7f0 00007ffb`cfeb66b5     : 00000000`00000001 00000000`002216fe 00000000`000103e8 0000017b`e80e67e0 : user32!CallWindowProcW+0x16c
+00000067`657cd860 00007ffb`cfeb68d8     : 00000000`00000001 00000000`00000000 00000000`00221878 00000000`00000000 : comctl32!CallNextSubclassProc+0xad
+00000067`657cd8f0 00007ff7`1fde0632     : 00000067`657ceb40 00000000`00221878 00000067`657cda44 0000017b`9eb37ca0 : comctl32!DefSubclassProc+0x88
+00000067`657cd940 00007ffb`cfeb66b5     : 00000067`657cda44 00000000`00000001 00000067`657cdc48 00007ffb`f322b340 : PhoenixMapEditor_Release+0x20632
+00000067`657cd970 00007ffb`cfeb6c5f     : 00000000`00000001 00000000`00000000 00000000`00221878 00000000`00000000 : comctl32!CallNextSubclassProc+0xad
+00000067`657cda00 00007ffb`f31f7846     : 00000000`00221878 00000067`00000111 00000000`00000000 00000000`00000001 : comctl32!MasterSubclassProc+0xef
+00000067`657cda80 00007ffb`f31f6b53     : 0000017b`9f325d50 00007ffb`cfeb6b70 00000000`00221878 00000000`00000111 : user32!UserCallWinProcCheckWow+0x356
+00000067`657cdbe0 00007ffb`f31f6904     : 00000000`00221878 00000000`00000000 00000000`000103e8 00000000`002216fe : user32!SendMessageWorker+0x223
+00000067`657cdc90 00007ffb`f31f66ef     : 00000000`00000000 00000000`000103e8 00000000`002216fe 00000000`00000111 : user32!SendMessageInternal+0x174
+00000067`657cdce0 00007ffb`f3268ece     : 00000000`00008006 00000000`00008006 0000017b`9eab5f80 00000000`00000007 : user32!SendMessageW+0xef
+00000067`657cdd30 00007ffb`f3268782     : 0000017b`00000000 0000017b`9eab5f80 0000017b`9eab6024 00000000`00000001 : user32!xxxLBoxCtlKeyInput+0x736
+00000067`657cddc0 00007ffb`f32808e4     : 0000017b`00000000 0000017b`00000037 00000000`00000130 00000000`00000001 : user32!xxxLBoxCtlCharInput+0x302
+00000067`657cde30 00007ffb`f31e74df     : 00000067`657ce138 00000000`00000037 00000000`00470001 00000000`80000022 : user32!ListBoxWndProcWorker+0x99344
+00000067`657cdf30 00007ffb`f31f7846     : 00000000`00000000 00000000`00000001 00000000`00000001 00000000`00000000 : user32!ComboListBoxWndProcW+0x5f
+00000067`657cdf70 00007ffb`f31f6b53     : 0000017b`9f217de0 00007ffb`f4c21920 00000000`002216fe 00000000`00000102 : user32!UserCallWinProcCheckWow+0x356
+00000067`657ce0d0 00007ffb`f3238379     : 00000000`002216fe 00000002`00000000 00000000`00000037 00000000`00470001 : user32!SendMessageWorker+0x223
+00000067`657ce180 00007ffb`f32374b1     : 0000017b`9ee50f00 00000000`00000037 00000000`00470001 00000000`80000022 : user32!ComboBoxWndProcWorker+0xe79
+00000067`657ce280 00007ffb`f31f7846     : 00000000`00000000 00000000`00000001 00000000`00000001 00000000`00000000 : user32!ComboBoxWndProcW+0x61
+00000067`657ce2c0 00007ffb`f31f730c     : 0000017b`9f325d50 00007ffb`f4c21900 00000000`00221878 00000000`00221878 : user32!UserCallWinProcCheckWow+0x356
+00000067`657ce420 00007ffb`cfeb66b5     : 00000000`00000001 00000000`00470001 00000000`00000037 00000000`00000000 : user32!CallWindowProcW+0x16c
+00000067`657ce490 00007ffb`cfeb68d8     : 00000000`00000001 00000000`00000000 00000000`00221878 00000000`00000000 : comctl32!CallNextSubclassProc+0xad
+00000067`657ce520 00007ff7`1fde0632     : 00000067`657ceb40 00000000`00221878 00000067`657ce674 00000000`00000001 : comctl32!DefSubclassProc+0x88
+00000067`657ce570 00007ffb`cfeb66b5     : 00000067`657ce674 00000000`00000001 00000067`657ce990 00007ffb`f2935428 : PhoenixMapEditor_Release+0x20632
+00000067`657ce5a0 00007ffb`cfeb6c5f     : 00000000`00000001 00000000`00000000 00000000`00221878 00000000`00000000 : comctl32!CallNextSubclassProc+0xad
+00000067`657ce630 00007ffb`f31f7846     : 00000000`00221878 00000067`00000102 00000000`00000000 00000000`00000001 : comctl32!MasterSubclassProc+0xef
+00000067`657ce6b0 00007ffb`f31f539d     : 00000067`657ce950 00007ffb`cfeb6b70 00000000`00221878 00000000`00000000 : user32!UserCallWinProcCheckWow+0x356
+00000067`657ce810 00007ff7`1fde58cd     : 00000067`657ce950 00000067`657ceb40 00000000`00000001 00000000`00000000 : user32!DispatchMessageWorker+0x1dd
+00000067`657ce890 00007ff7`1fdf4df9     : 00000067`657ceb40 00000000`00000000 00007ff7`1fdc0000 00007ff7`1fdc0000 : PhoenixMapEditor_Release+0x258cd
+00000067`657ceb20 00007ff7`1fe2a3f6     : 00000000`00000000 00000000`00000001 00000000`00000000 00000000`00000000 : PhoenixMapEditor_Release+0x34df9
+00000067`657cf860 00007ffb`f313e8d7     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : PhoenixMapEditor_Release+0x6a3f6
+00000067`657cf8a0 00007ffb`f4b4c53c     : 00000000`00000000 00000000`00000000 000004f0`fffffb30 000004d0`fffffb30 : kernel32!BaseThreadInitThunk+0x17
+00000067`657cf8d0 00000000`00000000     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x2c
+
+
+STACK_COMMAND:  ~0s; .ecxr ; kb
+
+SYMBOL_NAME:  phoenixmapeditor_release+20632
+
+MODULE_NAME: PhoenixMapEditor_Release
+
+IMAGE_NAME:  PhoenixMapEditor_Release.exe
+
+FAILURE_BUCKET_ID:  NULL_POINTER_READ_c0000005_PhoenixMapEditor_Release.exe!Unknown
+
+OS_VERSION:  10.0.26100.1
+
+BUILDLAB_STR:  ge_release
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+FAILURE_ID_HASH:  {bf4d2730-c355-7c61-7979-88f5200b3532}
+
+Followup:     MachineOwner
+---------
+
+0:000> rax=0000017beb635710 rbx=0000017beb6356a8 rcx=0000000000000000
+rdx=0000000000000188 rsi=0000000000000001 rdi=0000017beb635778
+rip=00007ffbf31f694d rsp=00000067657cd370 rbp=00000067657cd3d8
+ r8=0000000000000000  r9=0000000000000000 r10=0000000000000000
+r11=00000067657cd400 r12=0000000000000000 r13=0000000000000000
+r14=00000000000103e8 r15=0000000000000000
+iopl=0         nv up ei pl nz na pe nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00010202
+user32!SendMessageWorker+0x1d:
+00007ffb`f31f694d 488b39          mov     rdi,qword ptr [rcx] ds:00000000`00000000=????????????????
+0:000> Child-SP          RetAddr               Call Site
+00000067`657cd370 00007ffb`f3257bfc     user32!SendMessageWorker+0x1d
+00000067`657cd420 00007ffb`f3257788     user32!xxxCBInternalUpdateEditWindow+0x84
+00000067`657cd520 00007ffb`f3237d39     user32!xxxCBCommandHandler+0xe8
+00000067`657cd550 00007ffb`f32374b1     user32!ComboBoxWndProcWorker+0x839
+00000067`657cd650 00007ffb`f31f7846     user32!ComboBoxWndProcW+0x61
+00000067`657cd690 00007ffb`f31f730c     user32!UserCallWinProcCheckWow+0x356
+00000067`657cd7f0 00007ffb`cfeb66b5     user32!CallWindowProcW+0x16c
+00000067`657cd860 00007ffb`cfeb68d8     comctl32!CallNextSubclassProc+0xad
+00000067`657cd8f0 00007ff7`1fde0632     comctl32!DefSubclassProc+0x88
+00000067`657cd940 00007ffb`cfeb66b5     PhoenixMapEditor_Release+0x20632
+00000067`657cd970 00007ffb`cfeb6c5f     comctl32!CallNextSubclassProc+0xad
+00000067`657cda00 00007ffb`f31f7846     comctl32!MasterSubclassProc+0xef
+00000067`657cda80 00007ffb`f31f6b53     user32!UserCallWinProcCheckWow+0x356
+00000067`657cdbe0 00007ffb`f31f6904     user32!SendMessageWorker+0x223
+00000067`657cdc90 00007ffb`f31f66ef     user32!SendMessageInternal+0x174
+00000067`657cdce0 00007ffb`f3268ece     user32!SendMessageW+0xef
+00000067`657cdd30 00007ffb`f3268782     user32!xxxLBoxCtlKeyInput+0x736
+00000067`657cddc0 00007ffb`f32808e4     user32!xxxLBoxCtlCharInput+0x302
+00000067`657cde30 00007ffb`f31e74df     user32!ListBoxWndProcWorker+0x99344
+00000067`657cdf30 00007ffb`f31f7846     user32!ComboListBoxWndProcW+0x5f
+00000067`657cdf70 00007ffb`f31f6b53     user32!UserCallWinProcCheckWow+0x356
+00000067`657ce0d0 00007ffb`f3238379     user32!SendMessageWorker+0x223
+00000067`657ce180 00007ffb`f32374b1     user32!ComboBoxWndProcWorker+0xe79
+00000067`657ce280 00007ffb`f31f7846     user32!ComboBoxWndProcW+0x61
+00000067`657ce2c0 00007ffb`f31f730c     user32!UserCallWinProcCheckWow+0x356
+00000067`657ce420 00007ffb`cfeb66b5     user32!CallWindowProcW+0x16c
+00000067`657ce490 00007ffb`cfeb68d8     comctl32!CallNextSubclassProc+0xad
+00000067`657ce520 00007ff7`1fde0632     comctl32!DefSubclassProc+0x88
+00000067`657ce570 00007ffb`cfeb66b5     PhoenixMapEditor_Release+0x20632
+00000067`657ce5a0 00007ffb`cfeb6c5f     comctl32!CallNextSubclassProc+0xad
+00000067`657ce630 00007ffb`f31f7846     comctl32!MasterSubclassProc+0xef
+00000067`657ce6b0 00007ffb`f31f539d     user32!UserCallWinProcCheckWow+0x356
+00000067`657ce810 00007ff7`1fde58cd     user32!DispatchMessageWorker+0x1dd
+00000067`657ce890 00007ff7`1fdf4df9     PhoenixMapEditor_Release+0x258cd
+00000067`657ceb20 00007ff7`1fe2a3f6     PhoenixMapEditor_Release+0x34df9
+00000067`657cf860 00007ffb`f313e8d7     PhoenixMapEditor_Release+0x6a3f6
+00000067`657cf8a0 00007ffb`f4b4c53c     kernel32!BaseThreadInitThunk+0x17
+00000067`657cf8d0 00000000`00000000     ntdll!RtlUserThreadStart+0x2c
+0:000> start             end                 module name
+00007ff7`1fdc0000 00007ff7`1fe96000   PhoenixMapEditor_Release C (no symbols)           
+00007ffb`19900000 00007ffb`199a0000   tiptsf     (deferred)             
+00007ffb`1b230000 00007ffb`1b3dc000   dui70      (deferred)             
+00007ffb`7ed70000 00007ffb`7ee14000   wpdshext   (deferred)             
+00007ffb`7fb30000 00007ffb`7fb51000   davclnt    (deferred)             
+00007ffb`81570000 00007ffb`81613000   duser      (deferred)             
+00007ffb`835f0000 00007ffb`83754000   nvspcap64   (deferred)             
+00007ffb`83760000 00007ffb`83e87000   nvppex     (deferred)             
+00007ffb`87590000 00007ffb`875e1000   dlnashext   (deferred)             
+00007ffb`87970000 00007ffb`87995000   ntlanman   (deferred)             
+00007ffb`895f0000 00007ffb`8961f000   DevDispItemProvider   (deferred)             
+00007ffb`9f5e0000 00007ffb`9f69c000   Windows_FileExplorer_Common   (deferred)             
+00007ffb`a1fd0000 00007ffb`a1fdd000   atlthunk   (deferred)             
+00007ffb`a6270000 00007ffb`a633c000   cscui      (deferred)             
+00007ffb`a6340000 00007ffb`a6378000   EhStorShell   (deferred)             
+00007ffb`a6380000 00007ffb`a6442000   CoreSync_x64   (deferred)             
+00007ffb`b4a10000 00007ffb`b4a32000   p9np       (deferred)             
+00007ffb`b6fc0000 00007ffb`b6fc9000   IDMShellExt64   (deferred)             
+00007ffb`b7ef0000 00007ffb`b7eff000   linkinfo   (deferred)             
+00007ffb`b7f80000 00007ffb`b8001000   actxprxy   (deferred)             
+00007ffb`b8c00000 00007ffb`b8ca7000   ntshrui    (deferred)             
+00007ffb`b9980000 00007ffb`b99ac000   WcnApi     (deferred)             
+00007ffb`b99b0000 00007ffb`b99d1000   fdWCN      (deferred)             
+00007ffb`bb000000 00007ffb`bb2bd000   explorerframe   (deferred)             
+00007ffb`bc670000 00007ffb`bc7ea000   Windows_System_Launcher   (deferred)             
+00007ffb`be430000 00007ffb`be49f000   thumbcache   (deferred)             
+00007ffb`bebc0000 00007ffb`becf4000   Windows_Storage_Search   (deferred)             
+00007ffb`bed00000 00007ffb`bedbd000   StructuredQuery   (deferred)             
+00007ffb`bedc0000 00007ffb`bee95000   twinapi    (deferred)             
+00007ffb`bfea0000 00007ffb`bfefc000   PlayToDevice   (deferred)             
+00007ffb`bff20000 00007ffb`bff54000   fundisc    (deferred)             
+00007ffb`c0510000 00007ffb`c0535000   EhStorAPI   (deferred)             
+00007ffb`c0940000 00007ffb`c0957000   dfscli     (deferred)             
+00007ffb`c0d40000 00007ffb`c0d54000   fdProxy    (deferred)             
+00007ffb`c1430000 00007ffb`c1446000   dtsh       (deferred)             
+00007ffb`c1480000 00007ffb`c1496000   threadpoolwinrt   (deferred)             
+00007ffb`c2150000 00007ffb`c21aa000   dataexchange   (deferred)             
+00007ffb`c2670000 00007ffb`c2686000   browcli    (deferred)             
+00007ffb`c2b60000 00007ffb`c2b76000   NetworkItemFactory   (deferred)             
+00007ffb`c2f10000 00007ffb`c3332000   UIAutomationCore   (deferred)             
+00007ffb`c5140000 00007ffb`c515e000   atl        (deferred)             
+00007ffb`c7670000 00007ffb`c7739000   OneCoreCommonProxyStub   (deferred)             
+00007ffb`c7b30000 00007ffb`c7b63000   globinputhost   (deferred)             
+00007ffb`c7d40000 00007ffb`c7e88000   textinputframework   (deferred)             
+00007ffb`c85d0000 00007ffb`c8683000   TextShaping   (deferred)             
+00007ffb`c87d0000 00007ffb`c895f000   Windows_Globalization   (deferred)             
+00007ffb`c8970000 00007ffb`c8ac0000   Windows_UI_Immersive   (deferred)             
+00007ffb`c9f10000 00007ffb`ca062000   Windows_UI   (deferred)             
+00007ffb`cd850000 00007ffb`cd85d000   fdWNet     (deferred)             
+00007ffb`cf240000 00007ffb`cf29e000   Bcp47Langs   (deferred)             
+00007ffb`cf5c0000 00007ffb`cf639000   oleacc     (deferred)             
+00007ffb`cfaf0000 00007ffb`cfb03000   cscapi     (deferred)             
+00007ffb`cfe70000 00007ffb`cfe8b000   NetworkExplorer   (deferred)             
+00007ffb`cfe90000 00007ffb`cff44000   comctl32   (pdb symbols)          c:\symbols\comctl32v582.pdb\597D815A24A6E265C821D0D3E8C3A1C41\comctl32v582.pdb
+00007ffb`d0070000 00007ffb`d0099000   edputil    (deferred)             
+00007ffb`d0db0000 00007ffb`d0f89000   GdiPlus    (deferred)             
+00007ffb`d27a0000 00007ffb`d2a33000   comctl32_7ffbd27a0000   (deferred)             
+00007ffb`d61c0000 00007ffb`d61e9000   srvcli     (deferred)             
+00007ffb`d61f0000 00007ffb`d64b5000   iertutil   (deferred)             
+00007ffb`d6930000 00007ffb`d6b10000   urlmon     (deferred)             
+00007ffb`d6b20000 00007ffb`d6b41000   mpr        (deferred)             
+00007ffb`d70e0000 00007ffb`d7709000   windowsudk_shellcommon   (deferred)             
+00007ffb`d78d0000 00007ffb`d7b6e000   icu        (deferred)             
+00007ffb`d89c0000 00007ffb`ddf65000   nvwgf2umx   (deferred)             
+00007ffb`decc0000 00007ffb`df30f000   OneCoreUAPCommonProxyStub   (deferred)             
+00007ffb`df730000 00007ffb`df792000   FWPolicyIOMgr   (deferred)             
+00007ffb`df990000 00007ffb`dfacb000   NvMemMapStoragex   (deferred)             
+00007ffb`e0880000 00007ffb`e089a000   windows_staterepositorycore   (deferred)             
+00007ffb`e1940000 00007ffb`e1983000   xmllite    (deferred)             
+00007ffb`e2180000 00007ffb`e21b5000   winmm      (deferred)             
+00007ffb`e3870000 00007ffb`e3ab4000   twinapi_appcore   (pdb symbols)          c:\symbols\twinapi.appcore.pdb\7AD8780F821E4D7A07AFE268FFEB88991\twinapi.appcore.pdb
+00007ffb`e4540000 00007ffb`ea34d000   nvgpucomp64   (deferred)             
+00007ffb`ea3c0000 00007ffb`ea457000   MMDevAPI   (deferred)             
+00007ffb`eaf30000 00007ffb`eb0ab000   drvstore   (deferred)             
+00007ffb`eb0b0000 00007ffb`eb0c9000   npmproxy   (deferred)             
+00007ffb`eb120000 00007ffb`eb15b000   cryptnet   (deferred)             
+00007ffb`eb1a0000 00007ffb`eb1ab000   version    (deferred)             
+00007ffb`eb1b0000 00007ffb`eb27a000   nvldumdx   (deferred)             
+00007ffb`eb5e0000 00007ffb`eb5fb000   wkscli     (deferred)             
+00007ffb`eb6b0000 00007ffb`eb992000   CoreUIComponents   (deferred)             
+00007ffb`ec050000 00007ffb`ec0b3000   directxdatabasehelper   (deferred)             
+00007ffb`ec4d0000 00007ffb`ec56e000   PortableDeviceApi   (deferred)             
+00007ffb`ecb00000 00007ffb`ecb0d000   drprov     (deferred)             
+00007ffb`ecbb0000 00007ffb`ecbc1000   wtdccm     (deferred)             
+00007ffb`ecc80000 00007ffb`ecd83000   propsys    (deferred)             
+00007ffb`ecf40000 00007ffb`ed3bf000   D3DCOMPILER_47   (deferred)             
+00007ffb`ed420000 00007ffb`ed650000   WindowsCodecs   (deferred)             
+00007ffb`edf10000 00007ffb`ee172000   d3d11      (deferred)             
+00007ffb`ee180000 00007ffb`ee234000   policymanager   (deferred)             
+00007ffb`ee470000 00007ffb`ee597000   CoreMessaging   (deferred)             
+00007ffb`eed20000 00007ffb`eedbf000   apphelp    (deferred)             
+00007ffb`eee10000 00007ffb`eee39000   wtsapi32   (deferred)             
+00007ffb`eeeb0000 00007ffb`eef5b000   uxtheme    (deferred)             
+00007ffb`eef90000 00007ffb`eefd4000   DXCore     (deferred)             
+00007ffb`eefe0000 00007ffb`ef11b000   dxgi       (deferred)             
+00007ffb`ef240000 00007ffb`ef270000   dwmapi     (deferred)             
+00007ffb`ef7f0000 00007ffb`f004e000   windows_storage   (deferred)             
+00007ffb`f0140000 00007ffb`f0185000   fwbase     (deferred)             
+00007ffb`f01d0000 00007ffb`f0282000   FirewallAPI   (deferred)             
+00007ffb`f0360000 00007ffb`f036d000   netutils   (deferred)             
+00007ffb`f0370000 00007ffb`f03a4000   IPHLPAPI   (deferred)             
+00007ffb`f08e0000 00007ffb`f091a000   rsaenh     (deferred)             
+00007ffb`f0980000 00007ffb`f099b000   kernel_appcore   (deferred)             
+00007ffb`f0aa0000 00007ffb`f0ad6000   ntmarta    (deferred)             
+00007ffb`f0c20000 00007ffb`f0c69000   sspicli    (deferred)             
+00007ffb`f1120000 00007ffb`f112c000   cryptbase   (deferred)             
+00007ffb`f11c0000 00007ffb`f1225000   wldp       (deferred)             
+00007ffb`f12c0000 00007ffb`f12db000   cryptsp    (deferred)             
+00007ffb`f1320000 00007ffb`f1333000   msasn1     (deferred)             
+00007ffb`f1750000 00007ffb`f177d000   devobj     (deferred)             
+00007ffb`f1780000 00007ffb`f17d7000   cfgmgr32   (deferred)             
+00007ffb`f1910000 00007ffb`f1974000   winsta     (deferred)             
+00007ffb`f1980000 00007ffb`f1a22000   sxs        (deferred)             
+00007ffb`f1a50000 00007ffb`f1a64000   umpdc      (deferred)             
+00007ffb`f1a70000 00007ffb`f1ace000   powrprof   (deferred)             
+00007ffb`f1b00000 00007ffb`f1b2a000   bcrypt     (deferred)             
+00007ffb`f1b30000 00007ffb`f1b59000   profapi    (deferred)             
+00007ffb`f1c10000 00007ffb`f1d5b000   ucrtbase   (deferred)             
+00007ffb`f1d60000 00007ffb`f1e05000   bcryptPrimitives   (deferred)             
+00007ffb`f1e10000 00007ffb`f1f7a000   WinTypes   (deferred)             
+00007ffb`f1f80000 00007ffb`f236f000   KERNELBASE   (pdb symbols)          c:\symbols\kernelbase.pdb\29662B50D8352620EFDBDD2DDC78DD441\kernelbase.pdb
+00007ffb`f2380000 00007ffb`f24ac000   gdi32full   (deferred)             
+00007ffb`f24b0000 00007ffb`f2553000   msvcp_win   (deferred)             
+00007ffb`f2560000 00007ffb`f25e0000   wintrust   (deferred)             
+00007ffb`f26b0000 00007ffb`f26d7000   win32u     (deferred)             
+00007ffb`f26e0000 00007ffb`f2857000   crypt32    (deferred)             
+00007ffb`f28b0000 00007ffb`f2a0e000   msctf      (deferred)             
+00007ffb`f2c00000 00007ffb`f2f85000   combase    (deferred)             
+00007ffb`f2f90000 00007ffb`f3036000   sechost    (deferred)             
+00007ffb`f3040000 00007ffb`f30f4000   advapi32   (deferred)             
+00007ffb`f3110000 00007ffb`f31d9000   kernel32   (pdb symbols)          c:\symbols\kernel32.pdb\8C20EA974CB6DB4FF5A2178C17EC5BAA1\kernel32.pdb
+00007ffb`f31e0000 00007ffb`f33a5000   user32     (pdb symbols)          c:\symbols\user32.pdb\5EB0C130AE8A773D562F527F41BDEA961\user32.pdb
+00007ffb`f3410000 00007ffb`f35a7000   ole32      (private pdb symbols)  c:\symbols\ole32.pdb\4339373BBFD93A8CA31DD872EB5D40111\ole32.pdb
+00007ffb`f3650000 00007ffb`f3681000   imm32      (deferred)             
+00007ffb`f3690000 00007ffb`f3739000   msvcrt     (deferred)             
+00007ffb`f3750000 00007ffb`f377b000   gdi32      (deferred)             
+00007ffb`f3780000 00007ffb`f3870000   comdlg32   (deferred)             
+00007ffb`f3880000 00007ffb`f3956000   oleaut32   (deferred)             
+00007ffb`f3970000 00007ffb`f39e4000   ws2_32     (deferred)             
+00007ffb`f39f0000 00007ffb`f4143000   shell32    (deferred)             
+00007ffb`f4150000 00007ffb`f45da000   setupapi   (deferred)             
+00007ffb`f45e0000 00007ffb`f4690000   clbcatq    (deferred)             
+00007ffb`f46a0000 00007ffb`f471c000   coml2      (deferred)             
+00007ffb`f4720000 00007ffb`f4740000   imagehlp   (deferred)             
+00007ffb`f4750000 00007ffb`f47b6000   shlwapi    (deferred)             
+00007ffb`f47c0000 00007ffb`f48b5000   SHCore     (deferred)             
+00007ffb`f48c0000 00007ffb`f49d8000   rpcrt4     (deferred)             
+00007ffb`f4ac0000 00007ffb`f4d27000   ntdll      (pdb symbols)          c:\symbols\ntdll.pdb\E010FE8BE35C4C961B7E7658B5BCAE9D1\ntdll.pdb
+
+Unloaded modules:
+00007ffb`ef3d0000 00007ffb`ef3e4000   resourcepolicyclient.dll
+00007ffb`bc670000 00007ffb`bc7ea000   windows.system.launcher.dll
+00007ffb`a6450000 00007ffb`a64e6000   IDMNetMon64.DLL
+00007ffb`f3740000 00007ffb`f3748000   PSAPI.DLL
+00007ffb`f3970000 00007ffb`f39e4000   WS2_32.dll
+00007ffb`b44e0000 00007ffb`b4807000   MsftEdit.dll
+00007ffb`c6610000 00007ffb`c66d4000   Windows.StateRepositoryPS.dll
+00007ffb`c0550000 00007ffb`c0584000   FunDisc.dll
+00007ffb`eb0b0000 00007ffb`eb0c9000   npmproxy.dll
+00007ffb`ea3c0000 00007ffb`ea457000   MMDevApi.dll
+00007ffb`c4ec0000 00007ffb`c4ed6000   NetworkItemFactory.dll
+00007ffb`bfed0000 00007ffb`bfefc000   wcnapi.dll
+00007ffb`ec4d0000 00007ffb`ec56e000   PortableDeviceApi.dll
+00007ffb`c1430000 00007ffb`c1444000   fdproxy.dll
+00007ffb`c2b60000 00007ffb`c2b76000   dtsh.dll
+00007ffb`f01d0000 00007ffb`f0282000   FirewallAPI.dll
+00007ffb`df730000 00007ffb`df792000   FWPolicyIOMgr.dll
+00007ffb`f0140000 00007ffb`f0185000   fwbase.dll
+00007ffb`c0c70000 00007ffb`c0c91000   fdwcn.dll
+00007ffb`c2ac0000 00007ffb`c2ae5000   EhStorAPI.dll
+00007ffb`eee10000 00007ffb`eee39000   WTSAPI32.dll
+00007ffb`b99d0000 00007ffb`b9a74000   wpdshext.dll
+00007ffb`d0db0000 00007ffb`d0f89000   gdiplus.dll
+00007ffb`c0840000 00007ffb`c089c000   PlayToDevice.dll
+00007ffb`b4d10000 00007ffb`b4d5f000   vaultcli.dll
+00007ffb`c2690000 00007ffb`c269d000   fdWNet.dll
+00007ffb`c5140000 00007ffb`c515e000   ATL.DLL 
+00007ffb`f0370000 00007ffb`f03a4000   IPHLPAPI.DLL
+00007ffb`f3970000 00007ffb`f39e4000   WS2_32.dll
+00007ffb`b4a10000 00007ffb`b4a32000   p9np.dll
+00007ffb`ecb00000 00007ffb`ecb0d000   drprov.dll
+00007ffb`f1910000 00007ffb`f1974000   WINSTA.dll
+00007ffb`87970000 00007ffb`87995000   ntlanman.dll
+00007ffb`eb5e0000 00007ffb`eb5fb000   wkscli.dll
+00007ffb`c0940000 00007ffb`c0957000   dfscli.dll
+00007ffb`c2670000 00007ffb`c2686000   browcli.dll
+00007ffb`7fb30000 00007ffb`7fb51000   davclnt.dll
+00007ffb`b44e0000 00007ffb`b4807000   MsftEdit.dll
+00007ffb`b44e0000 00007ffb`b4807000   MsftEdit.dll
+0:000> quit:
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\atlmfc.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\ObjectiveC.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\concurrency.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\cpp_rest.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\stl.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Data.Json.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Geolocation.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Sensors.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Media.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\windows.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\winrt.natvis'

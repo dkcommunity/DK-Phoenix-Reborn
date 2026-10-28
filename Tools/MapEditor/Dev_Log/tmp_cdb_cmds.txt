@@ -1,0 +1,10 @@
+.sympath E:\DK Phoenix Reborn\Tool\MapEditor\bin
+.reload /f PhoenixMapEditor_Release.exe
+.ecxr
+k 50
+ln PhoenixMapEditor_Release+0x20632
+ln PhoenixMapEditor_Release+0x258cd
+ln PhoenixMapEditor_Release+0x34df9
+ub PhoenixMapEditor_Release+0x20632 L20
+ub PhoenixMapEditor_Release+0x258cd L20
+q
